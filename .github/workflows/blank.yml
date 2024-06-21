@@ -15,6 +15,6 @@ jobs:
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hongkong.aliyuncs.com
           #将镜像推送到Registry
-          docker tag ${{ secrets.DOCKER_IMGAE }}:${{ secrets.DOCKER_IMGAE_VERSION }  registry.cn-hongkong.aliyuncs.com/fhertyu/${{ secrets.DOCKER_AliIMGAE }}:${{ secrets.DOCKER_AliIMGAE }}
+          docker tag ${{ secrets.DOCKER_IMGAE }}:${{ secrets.DOCKER_IMGAE_VERSION }  registry.cn-hongkong.aliyuncs.com/fhertyu/${{ secrets.DOCKER_AliIMGAE }}:${{ secrets.DOCKER_AliIMGAE_VERSION }}
           # 推送镜像到镜像仓库
           docker push registry.cn-hongkong.aliyuncs.com/fhertyu/${{ secrets.DOCKER_AliIMGAE }}:${{ secrets.DOCKER_AliIMGAE }}
