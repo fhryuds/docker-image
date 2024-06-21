@@ -9,7 +9,7 @@ jobs:
         run: |
           sudo apt update && curl -fsSL https://get.docker.com -o get-docker.sh
           sudo sh get-docker.sh
-          docker pull  --platform linux/armv7 huangzulin/aria2-ui:latest
+          docker pull  --platform 	linux/arm/v7 huangzulin/aria2-ui:latest
 
       - name: Push the Docker image
         run: |
