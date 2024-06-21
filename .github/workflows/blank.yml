@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: 从Registry中拉取镜像
         run: |
-          sudo apt update && sudo apt install docker.io
+          sudo apt update && curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
           docker pull  --platform linux/armv7 huangzulin/aria2-ui:latest
 
       - name: Push the Docker image
