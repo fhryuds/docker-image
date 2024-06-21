@@ -8,7 +8,7 @@ jobs:
       - name: 从Registry中拉取镜像
         run: |
           apt update && apt install docker.io
-          docker pull  --platform linux/armv7 p3terx/ariang:latest
+          docker pull  --platform linux/armv7 huangzulin/aria2-ui:latest
 
       - name: Push the Docker image
         run: |
@@ -16,6 +16,6 @@ jobs:
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hongkong.aliyuncs.com
           #将镜像推送到Registry
-          docker tag p3terx/ariang:latest  registry.cn-hongkong.aliyuncs.com/fhertyu/aria2ng-webui:armv7
+          docker tag huangzulin/aria2-ui:latest  registry.cn-hongkong.aliyuncs.com/fhertyu/aria2ng-webui:armv7
           # 推送镜像到镜像仓库
           docker push registry.cn-hongkong.aliyuncs.com/fhertyu/aria2ng-webui:armv7
