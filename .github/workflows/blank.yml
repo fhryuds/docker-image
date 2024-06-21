@@ -5,7 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
       - name: 从Registry中拉取镜像
         run: docker pull  --platform armv7 p3terx/ariang:latest
 
