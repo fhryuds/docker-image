@@ -9,7 +9,7 @@ jobs:
         run: |
           sudo apt update && curl -fsSL https://get.docker.com -o get-docker.sh
           sudo sh get-docker.sh
-          docker pull  --platform 	linux/arm/v7 huangzulin/aria2-ui:latest
+          docker pull  --platform 	linux/arm/v7 whyour/qinglong:2.15.6
 
       - name: Push the Docker image
         run: |
@@ -17,6 +17,6 @@ jobs:
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hongkong.aliyuncs.com
           #将镜像推送到Registry
-          docker tag huangzulin/aria2-ui:latest  registry.cn-hongkong.aliyuncs.com/fhertyu/aria2ng-webui:armv7
+          docker tag whyour/qinglong:2.15.6  registry.cn-hongkong.aliyuncs.com/fhertyu/qinglong:2.15.6-armv7
           # 推送镜像到镜像仓库
-          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/aria2ng-webui:armv7
+          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/whyour/qinglong:2.15.6-armv7
