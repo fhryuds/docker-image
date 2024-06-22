@@ -9,7 +9,7 @@ jobs:
         run: |
           sudo apt update && curl -fsSL https://get.docker.com -o get-docker.sh
           sudo sh get-docker.sh
-          docker pull  --platform 	linux/arm/v7 whyour/qinglong:2.15.6
+          docker pull  --platform 	linux/arm/v7 crazymax/qbittorrent:4.6.4
 
       - name: Push the Docker image
         run: |
@@ -17,6 +17,6 @@ jobs:
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hongkong.aliyuncs.com
           #将镜像推送到Registry
-          docker tag whyour/qinglong:2.15.6  registry.cn-hongkong.aliyuncs.com/fhertyu/qinglong:2.15.6-armv7
+          docker tag crazymax/qbittorrent:4.6.4  registry.cn-hongkong.aliyuncs.com/fhertyu/qbittorrent:armv7-4.6.4
           # 推送镜像到镜像仓库
-          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/qinglong:2.15.6-armv7
+          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/qbittorrent:armv7-4.6.4
