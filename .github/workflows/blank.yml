@@ -19,4 +19,4 @@ jobs:
           #将镜像推送到Registry
           docker tag whyour/qinglong:2.15.6  registry.cn-hongkong.aliyuncs.com/fhertyu/qinglong:2.15.6-armv7
           # 推送镜像到镜像仓库
-          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/whyour/qinglong:2.15.6-armv7
+          docker push registry.cn-hongkong.aliyuncs.com/fhertyu/qinglong:2.15.6-armv7
